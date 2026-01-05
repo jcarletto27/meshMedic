@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.env
+
+# IDE Settings
+.idea/
+.vscode/
+*.swp
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Project Specific (Temporary 3D files)
+*.stl
+*.3mf
+*.obj
+temp/
+stl_processing/
