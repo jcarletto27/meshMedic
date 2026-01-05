@@ -1,0 +1,24 @@
+services:
+  meshmedic:
+    build: .
+    container_name: meshmedic
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    
+    # SECURITY HARDENING
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:size=1G,mode=1777  # Increased to 1GB RAM for complex surgeries
+      - /home/appuser/.streamlit:mode=1777
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G # MeshLib is RAM hungry during voxelization
+    environment:
+      - TMPDIR=/tmp/stl_processing
